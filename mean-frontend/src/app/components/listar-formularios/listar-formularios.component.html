@@ -1,0 +1,63 @@
+<div class="container mt-5">
+  <div class="row">
+      <!--<div class="col-lg-8 offset-lg-2">-->
+          <div class="card">
+              <div class="card-body text-center">
+                  <span class="titulo">FORMULARIOS CREADOS</span>
+                  <button class="btn btn-success float-end" routerLink="/crear-formulario">NUEVO</button>
+                  <table *ngIf="listFormularios.length> 0" class="table table-striped mt-8">
+                      <thead>
+                        <tr>
+                          <th scope="col">Fecha</th>
+                          <th scope="col">Lugar</th>
+                          <th scope="col">Unidad</th>
+                          <th scope="col">No Acta</th>
+                          <th scope="col">Objetivo</th>
+                          <th scope="col">HoraInicial</th>
+                          <th scope="col">HoraFinal</th>
+                          <th scope="col">Antecedentes</th>
+                          <th scope="col">Agenda</th>
+                          <th scope="col">Desarrollo</th>
+                          <th scope="col">Compromiso</th>
+                          <th scope="col">FechaEntrega</th>
+                          <th scope="col">Responsable</th>
+                          <th scope="col">Nombre del Participante</th>
+                          <th scope="col">Entidad</th>
+                          <th scope="col">Correo</th>
+                          <th scope="col">Telefono</th>
+                          <th scope="col">Firma</th>
+                          <th scope="col"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let formulario of listFormularios">
+                          <td>{{ formulario.fecha }}</td>
+                          <td>{{ formulario.lugar }}</td>
+                          <td>{{ formulario.unidad}}</td>
+                          <td>{{ formulario.noActa}}</td>
+                          <td>{{ formulario.objetivo}}</td>
+                          <td>{{ formulario.horaInicial}}</td>
+                          <td>{{ formulario.horaFinal}}</td>
+                          <td>{{ formulario.antecedentes }}</td>
+                          <td>{{ formulario.agenda}}</td>
+                          <td>{{ formulario.desarrollo}}</td>
+                          <td>{{ formulario.compromiso}}</td>
+                          <td>{{ formulario.fechaEntrega}}</td>
+                          <td>{{ formulario.responsable}}</td>
+                          <td>{{ formulario.nombreParticipante }}</td>
+                          <td>{{ formulario.entidad}}</td>
+                          <td>{{ formulario.correo}}</td>
+                          <td>{{ formulario.telefono }}</td>
+                          <td>{{ formulario.firma}}</td>
+                          <td>
+                            <i [routerLink]="['/editar-formulario', formulario._id]" class="fas fa-edit text-primary"></i>
+                            <i (click)="eliminarFormulario(formulario._id)" class="fas fa-trash text-danger"></i>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <h5 style="text-align: start; margin-top: 10px;" *ngIf="listFormularios.length == 0">No hay formularios para mostrar</h5>
+          </div>
+      </div>
+  </div>
+</div>
