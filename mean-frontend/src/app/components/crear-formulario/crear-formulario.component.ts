@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Formulario } from 'src/app/models/formulario';
 import { FormularioService } from 'src/app/services/formulario.service';
 
+
 @Component({
   selector: 'app-crear-formulario',
   templateUrl: './crear-formulario.component.html',
@@ -125,5 +126,7 @@ esEditar() {
     })
   }
 }
+
+
 
 }

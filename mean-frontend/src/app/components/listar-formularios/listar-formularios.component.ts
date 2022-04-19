@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import jsPDF from 'jspdf';
 import { ToastrService } from 'ngx-toastr';
 import { Formulario } from 'src/app/models/formulario';
 import { FormularioService } from 'src/app/services/formulario.service';
+//import { jsPDF } from "jspdf";
 
 @Component({
   selector: 'app-listar-formularios',
@@ -34,6 +36,14 @@ export class ListarFormulariosComponent implements OnInit {
     }, error => {
       console.log(error);
     })
+  }
+
+  imprimirLista(){
+    let pdf = new jsPDF();
+    var element =  document.getElementById('6252031b279b03e42ac57f33');
+    pdf.html(document.body);
+    pdf.save("Acta de reunion");
+
   }
 
 

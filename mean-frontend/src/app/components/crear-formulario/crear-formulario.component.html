@@ -1,167 +1,352 @@
 <div class="container mt-5">
   <div class="row">
-      <div class="col-lg-10 offset-lg-1 shadow-lg">
-          <div class="card">
-              <div class="card-body text-center">
-                  <span class="titulo">{{ titulo | uppercase }}</span>
-                  <form class="mt-3" [formGroup]="formularioForm" (ngSubmit)="agregarFormulario()">
-                    <img src="../../../assets/imagen/google-meet.png" width="408px" height="140px"> <br><br>
-                    <div class="mb-3">
-                          <input type="date" formControlName="fecha" class="form-control form-control-lg"
-                              placeholder="Fecha">
-                          <div class="text-danger"
-                              *ngIf="formularioForm.get('fecha')?.hasError('required') && formularioForm.get('fecha')?.touched">
-                              <strong>campo obligatorio*</strong>
-                          </div>
-                      </div>
-                      <div class="mb-3">
-                          <input type="text" formControlName="lugar" class="form-control form-control-lg"
-                              placeholder="Lugar">
-                          <div class="text-danger"
-                              *ngIf="formularioForm.get('lugar')?.hasError('required') && formularioForm.get('lugar')?.touched">
-                              <span>Lugar (fisico o enlace de reunion)<strong><br>es obligatoria*</strong></span>
-                          </div>
-                      </div>
-                      <div class="mb-3">
-                          <input type="text" formControlName="unidad" class="form-control form-control-lg"
-                              placeholder="Unidad">
-                          <div class="text-danger"
-                              *ngIf="formularioForm.get('unidad')?.hasError('required') && formularioForm.get('unidad')?.touched">
-                              <strong>campo obligatorio*</strong>
-                          </div>
-                      </div>
-                      <div class="mb-3">
-                        <input type="number" formControlName="noActa" class="form-control form-control-lg"
-                            placeholder="No Acta">
-                        <div class="text-danger"
-                            *ngIf="formularioForm.get('noActa')?.hasError('required') && formularioForm.get('noActa')?.touched">
-                            <span>Numero de Acta<strong>campo obligatorio*</strong></span>
-                        </div>
-                    </div>
-                    <h3>Desarrollo</h3>
-                    <div class="mb-3">
-                      <input type="text" formControlName="objetivo" class="form-control form-control-lg"
-                          placeholder="Objetivo">
-                      <div class="text-danger"
-                          *ngIf="formularioForm.get('objetivo')?.hasError('required') && formularioForm.get('objetivo')?.touched">
-                          <strong>campo obligatorio*</strong>
-                      </div>
-                  </div>
-                  <div class="mb-3">
-                    <input type="time" formControlName="horaInicial" class="form-control form-control-lg"
-                        placeholder="HoraInicial">
-                    <div class="text-danger"
-                        *ngIf="formularioForm.get('horaInicial')?.hasError('required') && formularioForm.get('horaInicial')?.touched">
-                        <strong>campo obligatorio*</strong>
-                    </div>
-                </div>
-                <div class="mb-3">
-                  <input type="time" formControlName="horaFinal" class="form-control form-control-lg"
-                      placeholder="HoraFinal">
-                  <div class="text-danger"
-                      *ngIf="formularioForm.get('horaFinal')?.hasError('required') && formularioForm.get('horaFinal')?.touched">
-                      <strong>campo obligatorio*</strong>
-                  </div>
+    <div class="col-lg-10 offset-lg-1 shadow-lg">
+      <div class="card">
+        <div class="card-body text-center">
+          <span class="titulo">{{ titulo | uppercase }}</span>
+          <form
+            class="mt-3"
+            [formGroup]="formularioForm"
+            (ngSubmit)="agregarFormulario()"
+          >
+            <img src="../../../assets/imagen/google-meet.png" width="408px"height="140px"/>
+            <br /><br />
+            <div class="mb-3">
+              <input
+                type="date"
+                formControlName="fecha"
+                class="form-control form-control-lg"
+                placeholder="Fecha"
+              />
+              <div
+                class="text-danger"
+                *ngIf="
+                  formularioForm.get('fecha')?.hasError('required') &&
+                  formularioForm.get('fecha')?.touched
+                "
+              >
+                <strong>campo obligatorio*</strong>
               </div>
-              <div class="mb-3">
-                <input type="text" formControlName="antecedentes" class="form-control form-control-lg"
-                    placeholder="Antecedentes">
-                <div class="text-danger"
-                    *ngIf="formularioForm.get('antecedentes')?.hasError('required') && formularioForm.get('antecedentes')?.touched">
-                    <strong>campo obligatorio*</strong>
-                </div>
             </div>
             <div class="mb-3">
-              <input type="text" formControlName="agenda" class="form-control form-control-lg"
-                  placeholder="Agenda">
-              <div class="text-danger"
-                  *ngIf="formularioForm.get('agenda')?.hasError('required') && formularioForm.get('agenda')?.touched">
-                  <strong>campo obligatorio*</strong>
+              <input
+                type="text"
+                formControlName="lugar"
+                class="form-control form-control-lg"
+                placeholder="Lugar"
+              />
+              <div
+                class="text-danger"
+                *ngIf="
+                  formularioForm.get('lugar')?.hasError('required') &&
+                  formularioForm.get('lugar')?.touched
+                "
+              >
+                <span
+                  >Lugar (fisico o enlace de reunion)<strong
+                    ><br />es obligatoria*</strong
+                  ></span
+                >
               </div>
-          </div>
-          <div class="mb-3">
-            <label for="staticDesarrollo" class="col-sm-2 col-form-label">Desarrollo</label>
-            <textarea class="form-control" formControlName="desarrollo" id="desarrollo" rows="3"></textarea>
-            <div class="text-danger"
-                *ngIf="formularioForm.get('desarrollo')?.hasError('required') && formularioForm.get('desarrollo')?.touched">
-                <strong>campo obligatorio*</strong>
             </div>
-        </div>
-        <h3>Compromisos o tareas</h3>
-        <div class="mb-3">
-          <input type="text" formControlName="compromiso" class="form-control form-control-lg"
-              placeholder="Compromiso">
-          <div class="text-danger"
-              *ngIf="formularioForm.get('compromiso')?.hasError('required') && formularioForm.get('compromiso')?.touched">
-              <strong>campo obligatorio*</strong>
-          </div>
-      </div>
-      <div class="mb-3">
-        <input type="date" formControlName="fechaEntrega" class="form-control form-control-lg"
-            placeholder="FechaEntrega">
-        <div class="text-danger"
-            *ngIf="formularioForm.get('fechaEntrega')?.hasError('required') && formularioForm.get('fechaEntrega')?.touched">
-            <span>Fecha de entrega<strong><br>campo obligatorio*</strong></span>
-        </div>
-    </div>
-    <div class="mb-3">
-      <input type="text" formControlName="responsable" class="form-control form-control-lg"
-          placeholder="Responsable">
-      <div class="text-danger"
-          *ngIf="formularioForm.get('responsable')?.hasError('required') && formularioForm.get('responsable')?.touched">
-          <strong>campo obligatorio*</strong>
-      </div>
-  </div>
-  <h3>Participantes de la Reunion</h3>
-  <div class="mb-3">
-    <input type="text" formControlName="nombreParticipante" class="form-control form-control-lg"
-        placeholder="Nombre Participante">
-    <div class="text-danger"
-        *ngIf="formularioForm.get('nombreParticipante')?.hasError('required') && formularioForm.get('nombreParticipante')?.touched">
-        <strong>campo obligatorio*</strong>
-    </div>
-</div>
-<div class="mb-3">
-  <input type="text" formControlName="entidad" class="form-control form-control-lg"
-      placeholder="Entidad">
-  <div class="text-danger"
-      *ngIf="formularioForm.get('entidad')?.hasError('required') && formularioForm.get('entidad')?.touched">
-      <strong>campo obligatorio*</strong>
-  </div>
-</div>
-<div class="mb-3">
-  <input type="text" formControlName="correo" class="form-control form-control-lg"
-      placeholder="Correo">
-  <div class="text-danger"
-      *ngIf="formularioForm.get('correo')?.hasError('required') && formularioForm.get('correo')?.touched">
-      <strong>campo obligatorio*</strong>
-  </div>
-</div>
-<div class="mb-3">
-  <input type="text" formControlName="telefono" class="form-control form-control-lg"
-      placeholder="Telefono">
-  <div class="text-danger"
-      *ngIf="formularioForm.get('telefono')?.hasError('required') && formularioForm.get('telefono')?.touched">
-      <strong>campo obligatorio*</strong>
-  </div>
-</div>
-<div class="mb-3">
-  <input type="text" formControlName="firma" class="form-control form-control-lg"
-      placeholder="firma">
-      <div class="text-danger"
-      *ngIf="formularioForm.get('firma')?.hasError('required') && formularioForm.get('firma')?.touched">
-      <strong>campo obligatorio*</strong>
-  </div>
-
-</div>
-                      <div class="mb-3">
-                          <button routerLink="/" class="btn btn-secondary btn-lg float-start">VOLVER</button>
-                          <button type="submit" class="btn btn-success btn-lg float-end">ACEPTAR</button>
-                      </div>
-                  </form>
+            <div class="mb-3">
+              <input
+                type="select"
+                formControlName="unidad"
+                class="form-control form-control-lg"
+                placeholder="Unidad"
+              />
+              <div
+                class="text-danger"
+                *ngIf="
+                  formularioForm.get('unidad')?.hasError('required') &&
+                  formularioForm.get('unidad')?.touched
+                "
+              >
+                <strong>campo obligatorio*</strong>
               </div>
-          </div>
+            </div>
+            <div class="mb-3">
+              <input
+                type="number"
+                formControlName="noActa"
+                class="form-control form-control-lg"
+                placeholder="No Acta"
+              />
+              <div
+                class="text-danger"
+                *ngIf="
+                  formularioForm.get('noActa')?.hasError('required') &&
+                  formularioForm.get('noActa')?.touched
+                "
+              >
+                <span>Numero de Acta<strong>campo obligatorio*</strong></span>
+              </div>
+            </div>
+            <h3>Desarrollo</h3>
+            <div class="mb-3">
+              <input
+                type="text"
+                formControlName="objetivo"
+                class="form-control form-control-lg"
+                placeholder="Objetivo"
+              />
+              <div
+                class="text-danger"
+                *ngIf="
+                  formularioForm.get('objetivo')?.hasError('required') &&
+                  formularioForm.get('objetivo')?.touched
+                "
+              >
+                <strong>campo obligatorio*</strong>
+              </div>
+            </div>
+            <div class="mb-3">
+              <input
+                type="time"
+                formControlName="horaInicial"
+                class="form-control form-control-lg"
+                placeholder="HoraInicial"
+              />
+              <div
+                class="text-danger"
+                *ngIf="
+                  formularioForm.get('horaInicial')?.hasError('required') &&
+                  formularioForm.get('horaInicial')?.touched
+                "
+              >
+                <strong>campo obligatorio*</strong>
+              </div>
+            </div>
+            <div class="mb-3">
+              <input
+                type="time"
+                formControlName="horaFinal"
+                class="form-control form-control-lg"
+                placeholder="HoraFinal"
+              />
+              <div
+                class="text-danger"
+                *ngIf="
+                  formularioForm.get('horaFinal')?.hasError('required') &&
+                  formularioForm.get('horaFinal')?.touched
+                "
+              >
+                <strong>campo obligatorio*</strong>
+              </div>
+            </div>
+            <div class="mb-3">
+              <input
+                type="text"
+                formControlName="antecedentes"
+                class="form-control form-control-lg"
+                placeholder="Antecedentes"
+              />
+              <div
+                class="text-danger"
+                *ngIf="
+                  formularioForm.get('antecedentes')?.hasError('required') &&
+                  formularioForm.get('antecedentes')?.touched
+                "
+              >
+                <strong>campo obligatorio*</strong>
+              </div>
+            </div>
+            <div class="mb-3">
+              <input
+                type="text"
+                formControlName="agenda"
+                class="form-control form-control-lg"
+                placeholder="Agenda"
+              />
+              <div
+                class="text-danger"
+                *ngIf="
+                  formularioForm.get('agenda')?.hasError('required') &&
+                  formularioForm.get('agenda')?.touched
+                "
+              >
+                <strong>campo obligatorio*</strong>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="staticDesarrollo" class="col-sm-2 col-form-label"
+                >Desarrollo</label
+              >
+              <textarea
+                class="form-control"
+                formControlName="desarrollo"
+                id="desarrollo"
+                rows="3"
+              ></textarea>
+              <div
+                class="text-danger"
+                *ngIf="
+                  formularioForm.get('desarrollo')?.hasError('required') &&
+                  formularioForm.get('desarrollo')?.touched
+                "
+              >
+                <strong>campo obligatorio*</strong>
+              </div>
+            </div>
+            <h3>Compromisos o tareas</h3>
+            <div class="mb-3">
+              <input
+                type="text"
+                formControlName="compromiso"
+                class="form-control form-control-lg"
+                placeholder="Compromiso"
+              />
+              <div
+                class="text-danger"
+                *ngIf="
+                  formularioForm.get('compromiso')?.hasError('required') &&
+                  formularioForm.get('compromiso')?.touched
+                "
+              >
+                <strong>campo obligatorio*</strong>
+              </div>
+            </div>
+            <div class="mb-3">
+              <input
+                type="date"
+                formControlName="fechaEntrega"
+                class="form-control form-control-lg"
+                placeholder="FechaEntrega"
+              />
+              <div
+                class="text-danger"
+                *ngIf="
+                  formularioForm.get('fechaEntrega')?.hasError('required') &&
+                  formularioForm.get('fechaEntrega')?.touched
+                "
+              >
+                <span
+                  >Fecha de entrega<strong
+                    ><br />campo obligatorio*</strong
+                  ></span
+                >
+              </div>
+            </div>
+            <div class="mb-3">
+              <input
+                type="text"
+                formControlName="responsable"
+                class="form-control form-control-lg"
+                placeholder="Responsable"
+              />
+              <div
+                class="text-danger"
+                *ngIf="
+                  formularioForm.get('responsable')?.hasError('required') &&
+                  formularioForm.get('responsable')?.touched
+                "
+              >
+                <strong>campo obligatorio*</strong>
+              </div>
+            </div>
+            <h3>Participantes de la Reunion</h3>
+            <div class="mb-3">
+              <input
+                type="text"
+                formControlName="nombreParticipante"
+                class="form-control form-control-lg"
+                placeholder="Nombre Participante"
+              />
+              <div
+                class="text-danger"
+                *ngIf="
+                  formularioForm
+                    .get('nombreParticipante')
+                    ?.hasError('required') &&
+                  formularioForm.get('nombreParticipante')?.touched
+                "
+              >
+                <strong>campo obligatorio*</strong>
+              </div>
+            </div>
+            <div class="mb-3">
+              <input
+                type="text"
+                formControlName="entidad"
+                class="form-control form-control-lg"
+                placeholder="Entidad"
+              />
+              <div
+                class="text-danger"
+                *ngIf="
+                  formularioForm.get('entidad')?.hasError('required') &&
+                  formularioForm.get('entidad')?.touched
+                "
+              >
+                <strong>campo obligatorio*</strong>
+              </div>
+            </div>
+            <div class="mb-3">
+              <input
+                type="text"
+                formControlName="correo"
+                class="form-control form-control-lg"
+                placeholder="Correo"
+              />
+              <div
+                class="text-danger"
+                *ngIf="
+                  formularioForm.get('correo')?.hasError('required') &&
+                  formularioForm.get('correo')?.touched
+                "
+              >
+                <strong>campo obligatorio*</strong>
+              </div>
+            </div>
+            <div class="mb-3">
+              <input
+                type="text"
+                formControlName="telefono"
+                class="form-control form-control-lg"
+                placeholder="Telefono"
+              />
+              <div
+                class="text-danger"
+                *ngIf="
+                  formularioForm.get('telefono')?.hasError('required') &&
+                  formularioForm.get('telefono')?.touched
+                "
+              >
+                <strong>campo obligatorio*</strong>
+              </div>
+            </div>
+            <div class="mb-3">
+              <input
+                type="text"
+                formControlName="firma"
+                class="form-control form-control-lg"
+                placeholder="firma"
+              />
+              <div
+                class="text-danger"
+                *ngIf="
+                  formularioForm.get('firma')?.hasError('required') &&
+                  formularioForm.get('firma')?.touched
+                "
+              >
+                <strong>campo obligatorio*</strong>
+              </div>
+            </div>
+            <div class="mb-3">
+              <button
+                routerLink="/"
+                class="btn btn-secondary btn-lg float-start"
+              >
+                VOLVER
+              </button>
+              <button type="submit" class="btn btn-success btn-lg float-end">
+                ENVIAR
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
+    </div>
   </div>
-  </div>
-
+</div>

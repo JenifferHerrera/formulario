@@ -1,58 +1,60 @@
-<div class="container mt-5">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
+<div id="6252031b279b03e42ac57f33" class="container mt-5" #6252031b279b03e42ac57f33>
   <div class="row">
-      <!--<div class="col-lg-8 offset-lg-2">-->
-          <div class="card">
               <div class="card-body text-center">
                   <span class="titulo">FORMULARIOS CREADOS</span>
                   <button class="btn btn-success float-end" routerLink="/crear-formulario">NUEVO</button>
-                  <table *ngIf="listFormularios.length> 0" class="table table-striped mt-8">
+                  <br><br> <table *ngIf="listFormularios.length> 0" class="table table-striped ">
                       <thead>
                         <tr>
-                          <th scope="col">Fecha</th>
-                          <th scope="col">Lugar</th>
-                          <th scope="col">Unidad</th>
-                          <th scope="col">No Acta</th>
-                          <th scope="col">Objetivo</th>
-                          <th scope="col">HoraInicial</th>
-                          <th scope="col">HoraFinal</th>
-                          <th scope="col">Antecedentes</th>
-                          <th scope="col">Agenda</th>
-                          <th scope="col">Desarrollo</th>
-                          <th scope="col">Compromiso</th>
-                          <th scope="col">FechaEntrega</th>
-                          <th scope="col">Responsable</th>
-                          <th scope="col">Nombre del Participante</th>
-                          <th scope="col">Entidad</th>
-                          <th scope="col">Correo</th>
-                          <th scope="col">Telefono</th>
-                          <th scope="col">Firma</th>
-                          <th scope="col"></th>
+                          <th scope="col" class="dato">Fecha</th>
+                          <th scope="col" class="dato">Lugar</th>
+                          <th scope="col" class="dato">Unidad</th>
+                          <th scope="col" class="dato">No Acta</th>
+                          <th scope="col" class="dato">Objetivo</th>
+                          <th scope="col" class="dato">HoraInicial</th>
+                          <th scope="col" class="dato">HoraFinal</th>
+                          <th scope="col" class="dato">Antecedentes</th>
+                          <th scope="col" class="dato">Agenda</th>
+                          <th scope="col" class="dato">Desarrollo</th>
+                          <th scope="col" class="dato">Compromiso</th>
+                          <th scope="col" class="dato">FechaEntrega</th>
+                          <th scope="col" class="dato">Responsable</th>
+                          <th scope="col" class="dato">Nombre del Participante</th>
+                          <th scope="col" class="dato">Entidad</th>
+                          <th scope="col" class="dato">Correo</th>
+                          <th scope="col" class="dato">Telefono</th>
+                          <th scope="col" class="dato">Firma</th>
+                          <th scope="col" class="dato"></th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr *ngFor="let formulario of listFormularios">
-                          <td>{{ formulario.fecha }}</td>
-                          <td>{{ formulario.lugar }}</td>
-                          <td>{{ formulario.unidad}}</td>
-                          <td>{{ formulario.noActa}}</td>
-                          <td>{{ formulario.objetivo}}</td>
-                          <td>{{ formulario.horaInicial}}</td>
-                          <td>{{ formulario.horaFinal}}</td>
-                          <td>{{ formulario.antecedentes }}</td>
-                          <td>{{ formulario.agenda}}</td>
-                          <td>{{ formulario.desarrollo}}</td>
-                          <td>{{ formulario.compromiso}}</td>
-                          <td>{{ formulario.fechaEntrega}}</td>
-                          <td>{{ formulario.responsable}}</td>
-                          <td>{{ formulario.nombreParticipante }}</td>
-                          <td>{{ formulario.entidad}}</td>
-                          <td>{{ formulario.correo}}</td>
-                          <td>{{ formulario.telefono }}</td>
-                          <td>{{ formulario.firma}}</td>
+                          <td class="dato">{{ formulario.fecha }}</td>
+                          <td class="dato">{{ formulario.lugar }}</td>
+                          <td class="dato">{{ formulario.unidad}}</td>
+                          <td class="dato">{{ formulario.noActa}}</td>
+                          <td class="dato">{{ formulario.objetivo}}</td>
+                          <td class="dato">{{ formulario.horaInicial}}</td>
+                          <td class="dato">{{ formulario.horaFinal}}</td>
+                          <td class="dato">{{ formulario.antecedentes }}</td>
+                          <td class="dato">{{ formulario.agenda}}</td>
+                          <td class="dato">{{ formulario.desarrollo}}</td>
+                          <td class="dato">{{ formulario.compromiso}}</td>
+                          <td class="dato">{{ formulario.fechaEntrega}}</td>
+                          <td class="dato">{{ formulario.responsable}}</td>
+                          <td class="dato">{{ formulario.nombreParticipante }}</td>
+                          <td class="dato">{{ formulario.entidad}}</td>
+                          <td class="dato">{{ formulario.correo}}</td>
+                          <td class="dato">{{ formulario.telefono }}</td>
+                          <td class="dato">{{ formulario.firma}}</td>
                           <td>
                             <i [routerLink]="['/editar-formulario', formulario._id]" class="fas fa-edit text-primary"></i>
                             <i (click)="eliminarFormulario(formulario._id)" class="fas fa-trash text-danger"></i>
                           </td>
+                          <button type="button" class = "btn btn-primary" (click)= "imprimirLista()">Imprimir </button>
                         </tr>
                       </tbody>
                     </table>
@@ -60,4 +62,3 @@
           </div>
       </div>
   </div>
-</div>
