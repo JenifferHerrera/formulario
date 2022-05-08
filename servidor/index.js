@@ -1,3 +1,5 @@
+////Comando de ejecutar /// npm run dev 
+
 const express = require('express');
 const conectarDB = require('./coneccion/coneccion');
 const cors = require('cors');

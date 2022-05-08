@@ -1,4 +1,3 @@
-
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -30,5 +29,9 @@ obtenerFormulario(id: string): Observable<any> {
 
 editarFormulario(id: string, formulario:Formulario): Observable<any> {
   return this.http.put(this.url + id, formulario);
+}
+
+imprimirFormulario(id: string): Observable<any> {
+  return this.http.get(this.url + id);
 }
 }

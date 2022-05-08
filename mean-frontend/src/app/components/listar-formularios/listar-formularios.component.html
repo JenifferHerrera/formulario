@@ -1,7 +1,5 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
-
-<div id="6252031b279b03e42ac57f33" class="container mt-5" #6252031b279b03e42ac57f33>
+<div id="test" class="container mt-5">
   <div class="row">
               <div class="card-body text-center">
                   <span class="titulo">FORMULARIOS CREADOS</span>
@@ -54,7 +52,7 @@
                             <i [routerLink]="['/editar-formulario', formulario._id]" class="fas fa-edit text-primary"></i>
                             <i (click)="eliminarFormulario(formulario._id)" class="fas fa-trash text-danger"></i>
                           </td>
-                          <button type="button" class = "btn btn-primary" (click)= "imprimirLista()">Imprimir </button>
+                          <button type="button" class = "btn btn-primary" (click)="generarpdf()" >Convertir</button>
                         </tr>
                       </tbody>
                     </table>

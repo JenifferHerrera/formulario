@@ -47,9 +47,7 @@ export class CrearFormularioComponent implements OnInit {
   ngOnInit(): void {
     this.esEditar();
   }
-  /*esEditar() {
-    throw new Error('Method not implemented.');
-  }*/
+
 
   agregarFormulario(){
 
@@ -78,7 +76,7 @@ export class CrearFormularioComponent implements OnInit {
       //editar formulario
       this._formularioService.editarFormulario(this.id, FORMULARIO).subscribe(data => {
         this.toastr.info('El formulario fue actualizado con exito!', 'Formulario Actualizado!');
-        this.router.navigate(['/']);
+        //this.router.navigate(['/']);
       }, error => {
         console.log(error);
         this.formularioForm.reset();
@@ -126,7 +124,4 @@ esEditar() {
     })
   }
 }
-
-
-
 }

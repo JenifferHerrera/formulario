@@ -1,7 +1,5 @@
 const Formulario = require("../models/Formulario");
 
-
-
 exports.crearFormulario = async (req, res)  => {
     try {
         let formulario;
